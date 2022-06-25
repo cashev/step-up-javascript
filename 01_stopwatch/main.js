@@ -1,3 +1,4 @@
+var displayElm = document.getElementsByClassName('display')[0];
 var startButton = document.getElementsByClassName('startButton')[0];
 
 startButton.addEventListener('click', function() {
@@ -5,6 +6,7 @@ startButton.addEventListener('click', function() {
     var seconds = 0;
     setInterval(function(){
         seconds++;
+        displayElm.innerHTML = seconds;
         console.log(seconds);
     }, 1000);
 });
