@@ -1,4 +1,4 @@
-function stopWatch() {
+function stopWatch(options) {
     function addMessage(message) {
         var messageElm = document.createElement('div');
         var now = new Date();
@@ -7,7 +7,12 @@ function stopWatch() {
         logElm.appendChild(messageElm);
     }
 
+    options = options || {};
+    var color = options.color || 'lightblue';
+    var backgroundColor = options.backgroundColor || 'black';
     var displayElm = document.getElementsByClassName('display')[0];
+    displayElm.style.color = color;
+    displayElm.style.backgroundColor = backgroundColor;
     var logElm = document.querySelector('.log');
     var timer = null;
 
@@ -37,4 +42,9 @@ function stopWatch() {
     });
 }
 
-stopWatch();
+var options = {
+    color: 'limegreen',
+    backgroundColor: '#333',
+};
+stopWatch(options);
+// stopWatch();
