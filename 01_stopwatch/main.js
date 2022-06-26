@@ -13,6 +13,11 @@ startButton.addEventListener('click', function() {
         displayElm.innerHTML = seconds;
         console.log(seconds);
     }, 1000);
+    var message = "開始";
+    var messageElm = document.createElement('div');
+    messageElm.innerText = message;
+    var logElm = document.querySelector('.log');
+    logElm.appendChild(messageElm);
 });
 
 var stopButton = document.getElementsByClassName('stopButton')[0];
