@@ -36,3 +36,5 @@ function stopWatch() {
         addMessage('終了');
     });
 }
+
+stopWatch();
