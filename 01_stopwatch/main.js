@@ -12,7 +12,7 @@ function stopWatch(options) {
 
     // 開始ボタン
     const startButton = document.getElementsByClassName('startButton')[0];
-    startButton.addEventListener('click', function() {
+    startButton.addEventListener('click', () => {
         if (timer !== null) {
             return;
         }
@@ -28,7 +28,7 @@ function stopWatch(options) {
 
     // 終了ボタン
     const stopButton = document.getElementsByClassName('stopButton')[0];
-    stopButton.addEventListener('click', function() {
+    stopButton.addEventListener('click', () => {
         if (timer === null) {
             return;
         }
@@ -38,7 +38,7 @@ function stopWatch(options) {
     });
 
     // ログを表示する
-    function addMessage(message) {
+    const addMessage = (message) => {
         const messageElm = document.createElement('div');
         const now = new Date();
         messageElm.innerText = `${now.getHours()}時${now.getMinutes()}分${now.getSeconds()}秒 ${message}`;
