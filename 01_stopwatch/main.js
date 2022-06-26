@@ -1,7 +1,8 @@
 function stopWatch(options = {}) {
     // 見た目
-    const color = options.color || 'lightblue';
-    const backgroundColor = options.backgroundColor || 'black';
+    let {color, backgroundColor} = options;
+    color = color || 'lightblue';
+    backgroundColor = backgroundColor || 'black';
     const displayElm = document.getElementsByClassName('display')[0];
     displayElm.style.color = color;
     displayElm.style.backgroundColor = backgroundColor;
