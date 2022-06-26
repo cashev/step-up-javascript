@@ -1,6 +1,8 @@
 function addMessage(message) {
     var messageElm = document.createElement('div');
-    messageElm.innerText = message;
+    var now = new Date();
+    messageElm.innerText = now.getHours() + '時' + now.getMinutes() + '分' + now.getSeconds() + '秒' + message;
+    messageElm.classList = ['message'];
     logElm.appendChild(messageElm);
 }
 
