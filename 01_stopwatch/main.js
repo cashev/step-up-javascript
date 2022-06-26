@@ -1,6 +1,5 @@
-function stopWatch(options) {
+function stopWatch(options = {}) {
     // 見た目
-    options = options || {};
     const color = options.color || 'lightblue';
     const backgroundColor = options.backgroundColor || 'black';
     const displayElm = document.getElementsByClassName('display')[0];
