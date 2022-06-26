@@ -1,12 +1,5 @@
 function stopWatch(options) {
-    function addMessage(message) {
-        var messageElm = document.createElement('div');
-        var now = new Date();
-        messageElm.innerText = now.getHours() + '時' + now.getMinutes() + '分' + now.getSeconds() + '秒' + message;
-        messageElm.classList = ['message'];
-        logElm.appendChild(messageElm);
-    }
-
+    // 見た目
     options = options || {};
     var color = options.color || 'lightblue';
     var backgroundColor = options.backgroundColor || 'black';
@@ -14,8 +7,10 @@ function stopWatch(options) {
     displayElm.style.color = color;
     displayElm.style.backgroundColor = backgroundColor;
     var logElm = document.querySelector('.log');
+    // タイマーを保持する
     var timer = null;
 
+    // 開始ボタン
     var startButton = document.getElementsByClassName('startButton')[0];
     startButton.addEventListener('click', function() {
         if (timer !== null) {
@@ -31,6 +26,7 @@ function stopWatch(options) {
         addMessage('開始');
     });
 
+    // 終了ボタン
     var stopButton = document.getElementsByClassName('stopButton')[0];
     stopButton.addEventListener('click', function() {
         if (timer === null) {
@@ -40,6 +36,15 @@ function stopWatch(options) {
         timer = null;
         addMessage('終了');
     });
+
+    // ログを表示する
+    function addMessage(message) {
+        var messageElm = document.createElement('div');
+        var now = new Date();
+        messageElm.innerText = now.getHours() + '時' + now.getMinutes() + '分' + now.getSeconds() + '秒' + message;
+        messageElm.classList = ['message'];
+        logElm.appendChild(messageElm);
+    }
 }
 
 var options = {
